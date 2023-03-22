@@ -98,12 +98,12 @@ namespace Bulkybook.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePOST(int? id)
         {
-            var obj= _db.Categories.Find(id);   
-            if (obj == null)
+            var obj1= _db.Categories.Find(id);   
+            if (obj1 == null)
             {
                 return NotFound();
             }
-            _db.Categories.Remove(obj);
+            _db.Categories.Remove(obj1);
             _db.SaveChanges();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
